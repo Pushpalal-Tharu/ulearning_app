@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/app_blocs.dart';
 import 'package:ulearning_app/app_events.dart';
+import 'package:ulearning_app/pages/sign_in/sign_in.dart';
 import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:ulearning_app/pages/welcome/welcome.dart';
 import 'app_state.dart';
@@ -30,11 +31,15 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+              // primarySwatch: Colors.blue,
+              appBarTheme: AppBarTheme(
+            elevation: 0,
+            backgroundColor: Colors.white,
+          )),
           home: Welcome(),
           routes: {
             "myHomePage": (context) => MyHomePage(),
+            "signIn": (context) => SignIn(),
           },
         ),
       ),
